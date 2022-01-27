@@ -16,7 +16,7 @@ For older change log history see the [historic changelog](HISTORIC_CHANGELOG.md)
   - Only run the CI/CD pipeline on branch _main_ when there are changes to files
     inside the `source` folder.
 - xWebConfigProperty
-  - Added try/catch in the Set-TargetResource function. Moved **"Clear-WebConfiguration"** into the try block, and added **"Remove-WebConfigurationProperty"
+  - Added try/catch in the Set-TargetResource function. Moved **"Clear-WebConfiguration"** into the try block, and added **"Remove-WebConfigurationProperty"**
     in the catch block.
  
 
