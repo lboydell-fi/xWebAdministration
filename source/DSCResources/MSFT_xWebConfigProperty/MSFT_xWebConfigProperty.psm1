@@ -154,10 +154,21 @@ function Set-TargetResource
         Write-Verbose `
             -Message ($script:localizedData.VerboseSetTargetRemoveItem -f $PropertyName )
 
-        Clear-WebConfiguration `
+        try
+          {
+            Clear-WebConfiguration `
                 -Filter "$($Filter)/@$($PropertyName)" `
                 -PSPath $WebsitePath `
                 -WarningAction Stop
+          }
+        catch
+          {
+            Remove-WebConfigurationProperty `
+                -PSPath $WebsitePath `
+                -Filter $Filter `
+                -Name $PropertyName `
+                -WarningAction Stop
+          }
     }
 }
 
